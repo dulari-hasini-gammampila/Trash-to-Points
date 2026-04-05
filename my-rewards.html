@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static “my rewards” / redemption history page for the HTML prototype.
+  IN THIS PROJECT: Analog to React MyRedemptions — may use localStorage mock data only.
+  WHY IT MATTERS: Lets testers see fulfillment UX before the full stack is running.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>My Rewards — Trash-to-Points</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-flow page-my-rewards">
+  <div class="flow-shell rw-shell">
+    <a class="flow-back" href="dashboard.html">← Dashboard</a>
+
+    <header class="flow-header">
+      <h1 class="flow-title">My Rewards</h1>
+      <p class="flow-lead">Codes for digital vouchers and physical pickup.</p>
+    </header>
+
+    <section class="rw-section" aria-labelledby="heading-digital">
+      <h2 class="rw-section-title" id="heading-digital">Digital rewards</h2>
+      <p class="rw-section-hint">Use your voucher code online or at participating vendors.</p>
+      <div class="rw-owned-list" id="digital-list"></div>
+    </section>
+
+    <section class="rw-section" aria-labelledby="heading-physical">
+      <h2 class="rw-section-title" id="heading-physical">Physical rewards</h2>
+      <p class="rw-section-hint">Show this collection code when you pick up your item.</p>
+      <div class="rw-owned-list" id="physical-list"></div>
+    </section>
+
+    <p class="rw-foot">
+      <a href="rewards.html">← Browse rewards</a>
+    </p>
+  </div>
+
+  <script src="rewards-lib.js"></script>
+  <script src="my-rewards.js"></script>
+</body>
+</html>

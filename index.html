@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Marketing landing for the legacy static site — hero, sections, links into flows.
+  IN THIS PROJECT: Separate from trash-to-points/client (React); uses shared.css and static scripts.
+  WHY IT MATTERS: Public entry for demos that don’t run the Vite app; sets brand and navigation.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <meta
+    name="description"
+    content="Trash-to-Points connects residents to smart bins, tracks disposals, and turns recycling into redeemable community rewards."
+  />
+  <title>Trash-to-Points — Smart recycling, real rewards</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-landing">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="index.html">Trash-to-Points</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#features">Why join</a>
+        <a href="#how">How it works</a>
+        <a href="rewards.html">Rewards</a>
+        <a class="site-nav-cta" href="login.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="landing-hero" id="top" aria-labelledby="hero-title">
+      <div class="landing-wrap">
+        <h1 id="hero-title">Recycle smarter. Earn points for your community.</h1>
+        <p class="landing-lead">
+          Link your account to a smart bin, dispose waste the right way, and redeem points for local perks.
+        </p>
+        <div class="landing-hero-actions">
+          <a class="btn btn-primary" href="login.html">Get started</a>
+          <a class="btn btn-secondary" href="dashboard.html">Open dashboard</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" id="features" aria-labelledby="features-title">
+      <div class="landing-wrap">
+        <h2 id="features-title" class="landing-section-title">Built for residents and neighborhoods</h2>
+        <p class="landing-section-intro">
+          One flow from bin to balance: submit proof, see live sessions, and spend points when you are ready.
+        </p>
+        <ul class="feature-grid">
+          <li class="feature-card">
+            <span class="feature-icon" aria-hidden="true">♻</span>
+            <h3>Smart bins</h3>
+            <p>Connect to a bin ID and follow on-screen guidance so every drop counts.</p>
+          </li>
+          <li class="feature-card">
+            <span class="feature-icon" aria-hidden="true">★</span>
+            <h3>Transparent points</h3>
+            <p>Track approved and pending submissions from your personal dashboard.</p>
+          </li>
+          <li class="feature-card">
+            <span class="feature-icon" aria-hidden="true">🎁</span>
+            <h3>Local rewards</h3>
+            <p>Browse the catalog and keep redemption codes in one place.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--alt" id="how" aria-labelledby="how-title">
+      <div class="landing-wrap">
+        <h2 id="how-title" class="landing-section-title">How it works</h2>
+        <ol class="how-steps">
+          <li>
+            <strong>Sign in</strong>
+            <span>Your session stays on this device so you can pick up where you left off.</span>
+          </li>
+          <li>
+            <strong>Link &amp; dispose</strong>
+            <span>Choose a bin, drop recyclables or waste as directed, and finish the live session.</span>
+          </li>
+          <li>
+            <strong>Earn &amp; redeem</strong>
+            <span>Points add to your balance; redeem them for rewards and view codes under My Rewards.</span>
+          </li>
+        </ol>
+        <p class="landing-how-extra">
+          You can also <a href="submit-trash.html">submit trash with photo proof</a> for admin review.
+        </p>
+      </div>
+    </section>
+
+    <section class="landing-cta-panel" aria-labelledby="cta-title">
+      <div class="landing-wrap landing-cta-inner">
+        <h2 id="cta-title">Ready when you are</h2>
+        <p>Sign in to open your dashboard, or explore rewards to see what is available.</p>
+        <div class="landing-hero-actions">
+          <a class="btn btn-primary" href="login.html">Sign in</a>
+          <a class="btn btn-secondary" href="rewards.html">View rewards</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-col">
+        <p class="site-footer-heading">Program</p>
+        <ul>
+          <li><a href="login.html">Sign in</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="submit-trash.html">Submit trash</a></li>
+          <li><a href="rewards.html">Rewards</a></li>
+          <li><a href="my-rewards.html">My rewards</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <p class="site-footer-heading">Smart bin flow</p>
+        <ul>
+          <li><a href="connect-bin.html">Connect bin</a></li>
+          <li><a href="live-disposal.html">Live disposal</a></li>
+          <li><a href="completion.html">Session complete</a></li>
+        </ul>
+      </div>
+      <div class="site-footer-col">
+        <p class="site-footer-heading">Staff</p>
+        <ul>
+          <li><a href="admin-login.html">Admin login</a></li>
+          <li><a href="admin-verification.html">Verify submissions</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer-note">
+      Full stack (React + API): run <code>python -m launcher</code> from this folder, then open
+      <a href="http://localhost:8000">http://localhost:8000</a> (or <a href="http://[::1]:8000">http://[::1]:8000</a>).
+      For these static pages only, use <code>python -m http.server</code> in this folder.
+    </p>
+    <p class="site-footer-copy">© Trash-to-Points Community</p>
+  </footer>
+</body>
+</html>

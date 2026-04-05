@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static “live disposal” step — instructional/UI mock for in-field disposal.
+  IN THIS PROJECT: Part of the static multi-page journey (not wired like the React submission API).
+  WHY IT MATTERS: Communicates real-time or on-site behavior in pitch decks and usability tests.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Live Disposal — Trash-to-Points</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-flow page-live-disposal">
+  <div class="flow-shell flow-shell-wide">
+    <div class="flow-nav-top">
+      <a class="flow-back" href="connect-bin.html">← Change bin</a>
+      <p class="flow-subnav"><a href="dashboard.html">Dashboard</a></p>
+    </div>
+
+    <header class="flow-header">
+      <h1 class="flow-title">Live disposal</h1>
+      <p class="flow-lead">Each tap simulates the bin scanning one item.</p>
+    </header>
+
+    <div class="flow-card live-bin-card">
+      <p class="live-label">Connected bin</p>
+      <p class="live-bin-id" id="bin-display">—</p>
+    </div>
+
+    <div class="live-stats">
+      <div class="flow-card live-stat-card">
+        <p class="live-label" id="label-items">Items inserted</p>
+        <p class="live-mega" id="live-items" aria-labelledby="label-items">0</p>
+      </div>
+      <div class="flow-card live-stat-card">
+        <p class="live-label" id="label-points">Points earned</p>
+        <p class="live-mega live-mega-accent" id="live-points" aria-labelledby="label-points">0</p>
+      </div>
+    </div>
+
+    <div class="flow-card live-actions-card">
+      <div class="live-actions">
+        <button type="button" class="btn btn-primary btn-block btn-flow" id="btn-insert">
+          Insert Item
+        </button>
+        <button type="button" class="btn btn-secondary btn-block btn-flow" id="btn-finish">
+          Finish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="live-disposal.js"></script>
+</body>
+</html>

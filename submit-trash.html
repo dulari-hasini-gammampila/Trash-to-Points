@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static flow step for logging a trash submission (legacy HTML prototype).
+  IN THIS PROJECT: Counterpart to React NewSubmission + SubmissionForm; may not hit the real API.
+  WHY IT MATTERS: Demonstrates resident proof-of-disposal UX for stakeholders without running Vite.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Submit Trash — Trash-to-Points</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-flow page-submit-trash">
+  <div class="flow-shell flow-shell-wide">
+    <a class="flow-back" href="dashboard.html">← Dashboard</a>
+
+    <header class="flow-header">
+      <h1 class="flow-title">Submit trash</h1>
+      <p class="flow-lead">Send proof for admin review. You’ll get points after verification.</p>
+    </header>
+
+    <div
+      id="submit-success"
+      class="submit-success-banner"
+      role="status"
+      aria-live="polite"
+      hidden
+    >
+      Submission sent for admin review
+    </div>
+
+    <form id="submit-trash-form" class="flow-card submit-trash-form" novalidate>
+      <div class="submit-field">
+        <label class="flow-label" for="bin-number">Smart Bin Number</label>
+        <input
+          class="flow-input"
+          type="text"
+          id="bin-number"
+          name="bin"
+          inputmode="text"
+          autocomplete="off"
+          placeholder="e.g. TP-101"
+          maxlength="40"
+          required
+        />
+      </div>
+
+      <div class="submit-field">
+        <label class="flow-label" for="proof-image">Image proof</label>
+        <div class="submit-file-row">
+          <input
+            type="file"
+            id="proof-image"
+            name="proof"
+            accept="image/*"
+            capture="environment"
+            class="submit-file-input"
+            required
+          />
+        </div>
+        <p class="submit-file-hint">Photo of your disposal (camera or gallery).</p>
+        <div id="file-preview-wrap" class="submit-preview-wrap" hidden>
+          <img id="file-preview" class="submit-preview-img" alt="Selected proof preview" />
+        </div>
+      </div>
+
+      <div class="submit-field">
+        <label class="flow-label" for="item-count">Number of items</label>
+        <input
+          class="flow-input"
+          type="number"
+          id="item-count"
+          name="items"
+          inputmode="numeric"
+          min="1"
+          step="1"
+          placeholder="1"
+          required
+        />
+      </div>
+
+      <div class="submit-field">
+        <label class="flow-label" for="location">Location</label>
+        <select class="flow-select" id="location" name="location" required>
+          <option value="" disabled selected>Select location</option>
+          <option value="Playground">Playground</option>
+          <option value="Jogging Path">Jogging Path</option>
+          <option value="Picnic Area">Picnic Area</option>
+          <option value="Near Toilets">Near Toilets</option>
+        </select>
+      </div>
+
+      <p class="flow-hint" id="submit-error" role="alert" hidden></p>
+
+      <button type="submit" class="btn btn-primary btn-block btn-flow" id="submit-btn">
+        Submit
+      </button>
+    </form>
+  </div>
+
+  <script src="submit-trash.js"></script>
+</body>
+</html>

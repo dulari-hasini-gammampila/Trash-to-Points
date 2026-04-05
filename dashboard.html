@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static hub after login — shortcuts to submit, rewards, admin tools (HTML prototype).
+  IN THIS PROJECT: Uses TtpAuth from auth.js; not the React resident/admin dashboards.
+  WHY IT MATTERS: Central menu for the static demo; staff may land here after admin-login.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Dashboard — Trash-to-Points Community</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script src="auth.js"></script>
+</head>
+<body class="page-dashboard">
+  <div class="dash-shell">
+    <header class="dash-top">
+      <a class="dash-back" href="index.html">← Home</a>
+      <h1 class="dash-title">Dashboard</h1>
+      <p class="dash-subtitle">Your recycling progress</p>
+    </header>
+
+    <div class="dash-grid dash-grid--triple">
+      <article class="dash-card" aria-labelledby="label-points">
+        <p class="dash-card-label" id="label-points">Total Points</p>
+        <p class="dash-card-value" id="total-points">0</p>
+      </article>
+      <article class="dash-card" aria-labelledby="label-approved">
+        <p class="dash-card-label" id="label-approved">Approved Submissions</p>
+        <p class="dash-card-value" id="total-approved">0</p>
+      </article>
+      <article class="dash-card" aria-labelledby="label-pending">
+        <p class="dash-card-label" id="label-pending">Pending Submissions</p>
+        <p class="dash-card-value" id="total-pending">0</p>
+      </article>
+    </div>
+
+    <section class="dash-card dash-card-actions" aria-label="Quick actions">
+      <div class="dash-actions">
+        <a class="btn btn-primary btn-block" href="submit-trash.html">Submit Trash</a>
+        <a class="btn btn-secondary btn-block" href="rewards.html">Rewards</a>
+        <a class="btn btn-secondary btn-block" href="my-rewards.html">My Rewards</a>
+      </div>
+      <div id="dash-admin-slot" class="dash-admin-slot" aria-live="polite"></div>
+      <p class="dash-logout-foot">
+        <button type="button" class="dash-logout-btn" id="btn-sign-out">Sign out</button>
+      </p>
+    </section>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

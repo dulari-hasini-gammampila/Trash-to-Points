@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static page to “connect” or confirm association with a bin (QR/code UX mock).
+  IN THIS PROJECT: Legacy flow; React app uses bin codes inside SubmissionForm + API validation.
+  WHY IT MATTERS: Ties user story to physical bins for demos and screenshots.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Connect Bin — Trash-to-Points</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-flow page-connect-bin">
+  <div class="flow-shell">
+    <a class="flow-back" href="dashboard.html">← Dashboard</a>
+
+    <header class="flow-header">
+      <h1 class="flow-title">Connect to bin</h1>
+      <p class="flow-lead">Enter the ID shown on the smart bin.</p>
+    </header>
+
+    <form class="flow-card" id="connect-form" novalidate>
+      <label class="flow-label" for="bin-number">Bin number</label>
+      <input
+        class="flow-input"
+        type="text"
+        id="bin-number"
+        name="bin"
+        inputmode="text"
+        autocomplete="off"
+        placeholder="e.g. TP-101"
+        maxlength="32"
+        required
+      />
+      <p class="flow-hint" id="connect-error" role="alert" hidden>Please enter a bin number.</p>
+      <button type="submit" class="btn btn-primary btn-block btn-flow">Connect</button>
+    </form>
+  </div>
+
+  <script src="connect-bin.js"></script>
+</body>
+</html>

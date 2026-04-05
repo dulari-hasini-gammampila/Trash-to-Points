@@ -1,0 +1,23 @@
+# WHAT THIS FILE DOES: Render.com Blueprint — defines the API web service, build/start, health check, env keys.
+# IN THIS PROJECT: Deploys the Express server (rootDir: server) with DATABASE_URL, JWT_SECRET, FRONTEND_URL.
+# WHY IT MATTERS: One-click-ish production hosting; wrong env here breaks auth and DB in the cloud.
+# Doc: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: trash-to-points-api
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        sync: false

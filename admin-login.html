@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES
+  Renders the “Staff sign-in” screen: one password field, error area, submit, and cancel link.
+
+  IN THIS PROJECT
+  Static page in the repo root (not Vite). Loads shared.css, auth.js, then admin-login.js so
+  staff can unlock admin UI in the browser after entering the org’s administrator ID.
+
+  WHY IT MATTERS
+  Without this page, the static admin flow has no entry point; keep it noindex and protect the ID.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <meta name="robots" content="noindex" />
+  <title>Staff sign-in — Trash-to-Points</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-login">
+  <div class="auth-card auth-card-wide">
+    <h1 class="auth-title">Staff sign-in</h1>
+    <p class="auth-lead">Enter the administrator ID you were given. Only a matching ID can unlock admin access on this device.</p>
+    <form id="admin-join-form" class="admin-join-form" novalidate>
+      <label class="flow-label" for="admin-id">Administrator ID</label>
+      <input
+        class="flow-input"
+        type="password"
+        id="admin-id"
+        name="adminId"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+        maxlength="64"
+        required
+      />
+      <p class="flow-hint admin-id-error" id="admin-id-error" role="alert" hidden></p>
+      <button type="submit" class="btn btn-primary btn-block">Verify and sign in</button>
+    </form>
+    <div class="auth-actions admin-join-actions">
+      <a class="btn btn-secondary btn-block" href="index.html">Cancel</a>
+    </div>
+  </div>
+  <script src="auth.js"></script>
+  <script src="admin-login.js"></script>
+</body>
+</html>

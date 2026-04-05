@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static “verify submissions” admin screen (prototype queue / UX).
+  IN THIS PROJECT: Parallel to React ManageSubmissions — HTML-only demo, may use local scripts.
+  WHY IT MATTERS: Shows how staff review could look without the full SPA; keep in sync with product story.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Admin — Verify submissions</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script src="auth.js"></script>
+  <script>
+    if (window.TtpAuth) TtpAuth.guardAdminPage();
+  </script>
+</head>
+<body class="page-flow page-admin">
+  <div class="flow-shell admin-shell">
+    <a class="flow-back" href="dashboard.html">← Dashboard</a>
+
+    <header class="flow-header admin-header">
+      <h1 class="flow-title">Verification</h1>
+      <p class="flow-lead">Review trash submissions and approve or reject.</p>
+      <p class="admin-meta" id="admin-count" aria-live="polite"></p>
+    </header>
+
+    <div id="admin-empty" class="admin-empty flow-card" hidden>
+      <p>No submissions yet. Users can submit from <strong>Submit Trash</strong>.</p>
+    </div>
+
+    <div id="admin-list" class="admin-list"></div>
+  </div>
+
+  <script src="admin-verification.js"></script>
+</body>
+</html>

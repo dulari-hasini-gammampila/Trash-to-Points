@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static resident sign-in page (forms + shared.css) for the legacy HTML flows.
+  IN THIS PROJECT: Pre-React prototype auth UX; real JWT app uses trash-to-points/client Login.jsx.
+  WHY IT MATTERS: Entry point for static demo users before hitting dashboard/submit flows.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Login — Trash-to-Points Community</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-login">
+  <div class="auth-card">
+    <h1 class="auth-title">Sign in</h1>
+    <p class="auth-lead">Continue to your dashboard. Your session is saved on this device.</p>
+    <div class="auth-actions">
+      <button type="button" class="btn btn-primary btn-block" data-signin-role="user">
+        Continue
+      </button>
+      <a class="btn btn-secondary btn-block" href="index.html">Back to home</a>
+    </div>
+  </div>
+  <script src="auth.js"></script>
+  <script src="login.js"></script>
+</body>
+</html>

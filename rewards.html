@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Static rewards catalog view for the legacy HTML site.
+  IN THIS PROJECT: Marketing/prototype; live catalog with API is RewardsPublic.jsx + ManageRewards admin.
+  WHY IT MATTERS: Shows redeemable perks narrative without signing into the SPA.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Rewards — Trash-to-Points</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-flow page-rewards">
+  <div class="flow-shell rw-shell">
+    <a class="flow-back" href="dashboard.html">← Dashboard</a>
+
+    <header class="flow-header">
+      <h1 class="flow-title">Rewards</h1>
+      <p class="flow-lead">Redeem points for community perks.</p>
+    </header>
+
+    <div class="rw-balance flow-card" aria-live="polite">
+      <p class="rw-balance-label">Your points</p>
+      <p class="rw-balance-value" id="points-balance">0</p>
+    </div>
+
+    <div class="rw-list" id="reward-list"></div>
+
+    <p class="rw-foot">
+      <a href="my-rewards.html">View My Rewards →</a>
+    </p>
+  </div>
+
+  <script src="rewards-lib.js"></script>
+  <script src="rewards.js"></script>
+</body>
+</html>

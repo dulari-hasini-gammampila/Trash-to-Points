@@ -1,0 +1,22 @@
+# WHAT THIS FILE DOES: Declares a local Postgres 16 container and a named volume for persistent data.
+# IN THIS PROJECT: Dev/test database for the Node API — matches server/.env.example DATABASE_URL defaults.
+# WHY IT MATTERS: No running DB means migrations, seed, and the API all fail; start this before dev.cmd.
+#
+# DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:5432/trash_points
+# From trash-to-points:  docker compose up -d  then  cd server && npm run dev  (or dev.cmd)
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: ttp-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: trash_points
+    ports:
+      - "5432:5432"
+    volumes:
+      - ttp_pgdata:/var/lib/postgresql/data
+
+volumes:
+  ttp_pgdata:

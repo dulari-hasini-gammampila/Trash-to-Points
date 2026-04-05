@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+  WHAT THIS FILE DOES: Thank-you / session complete screen at the end of a static multi-step flow.
+  IN THIS PROJECT: Closes the HTML journey (submit → … → completion); optional link back to home.
+  WHY IT MATTERS: Confirms success for users and gives a clear stopping point in walkthroughs.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#143d32" />
+  <title>Session complete — Trash-to-Points</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page-flow page-completion">
+  <div class="flow-shell">
+    <a class="flow-back" href="dashboard.html">← Dashboard</a>
+    <header class="flow-header">
+      <p class="completion-badge" aria-hidden="true">✓</p>
+      <h1 class="flow-title">Session complete</h1>
+      <p class="flow-lead" id="completion-summary">Your totals have been saved.</p>
+    </header>
+
+    <div class="flow-card completion-card">
+      <dl class="completion-dl">
+        <div class="completion-row">
+          <dt>Bin</dt>
+          <dd id="done-bin">—</dd>
+        </div>
+        <div class="completion-row">
+          <dt>Items</dt>
+          <dd id="done-items">0</dd>
+        </div>
+        <div class="completion-row">
+          <dt>Points this session</dt>
+          <dd id="done-points">0</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="completion-actions">
+      <a class="btn btn-primary btn-block btn-flow" href="dashboard.html">Back to Dashboard</a>
+      <a class="btn btn-secondary btn-block btn-flow" href="rewards.html">Browse rewards</a>
+      <a class="btn btn-secondary btn-block btn-flow" href="index.html">Home</a>
+    </div>
+
+    <p class="completion-more">
+      <a href="connect-bin.html">Another disposal session</a>
+      ·
+      <a href="my-rewards.html">My rewards</a>
+    </p>
+  </div>
+
+  <script src="completion.js"></script>
+</body>
+</html>
